@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B8CF047-95C7-4E42-B9B8-9376644BDD83}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TelineApp</RootNamespace>
+    <AssemblyName>TelineApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColoredTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ColoredTextBox.Designer.cs" />
+    <Compile Include="DlgAddServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgAddServer.designer.cs">
+      <DependentUpon>DlgAddServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DlgLisaaUusiOsa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgLisaaUusiOsa.Designer.cs">
+      <DependentUpon>DlgLisaaUusiOsa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTelineTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTelineTables.Designer.cs">
+      <DependentUpon>FormTelineTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormServersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormServersList.Designer.cs">
+      <DependentUpon>FormServersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DlgAddServer.resx">
+      <DependentUpon>DlgAddServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgLisaaUusiOsa.resx">
+      <DependentUpon>DlgLisaaUusiOsa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTelineTables.resx">
+      <DependentUpon>FormTelineTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormServersList.resx">
+      <DependentUpon>FormServersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="DbConnection\DbConnection.csproj">
+      <Project>{e55d6a57-2fac-451a-b84a-61b5bc333d30}</Project>
+      <Name>DbConnection</Name>
+    </ProjectReference>
+    <ProjectReference Include="ServiceLib\ServiceLib.csproj">
+      <Project>{e09fd2ae-5f10-4369-b624-8d9c4962e6f8}</Project>
+      <Name>ServiceLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="TelineLib\TelineLib.csproj">
+      <Project>{0b305dac-dc8d-4cd3-b8d8-70d1c3f8a3cf}</Project>
+      <Name>TelineLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="TelineVarasto\TelineVarasto.csproj">
+      <Project>{e33b2c52-05e7-43c7-a2cd-39d74a3b9539}</Project>
+      <Name>TelineVarasto</Name>
+    </ProjectReference>
+    <ProjectReference Include="WinFormsUI\WinFormsUI.csproj">
+      <Project>{C75532C4-765B-418E-B09B-46D36B2ABDB1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

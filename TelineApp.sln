@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33027.164
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelineApp", "TelineApp.csproj", "{6B8CF047-95C7-4E42-B9B8-9376644BDD83}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E55D6A57-2FAC-451A-B84A-61B5BC333D30} = {E55D6A57-2FAC-451A-B84A-61B5BC333D30}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsUI", "WinFormsUI\WinFormsUI.csproj", "{C75532C4-765B-418E-B09B-46D36B2ABDB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbConnection", "DbConnection\DbConnection.csproj", "{E55D6A57-2FAC-451A-B84A-61B5BC333D30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelineLib", "TelineLib\TelineLib.csproj", "{0B305DAC-DC8D-4CD3-B8D8-70D1C3F8A3CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLib", "ServiceLib\ServiceLib.csproj", "{E09FD2AE-5F10-4369-B624-8D9C4962E6F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelineVarasto", "TelineVarasto\TelineVarasto.csproj", "{E33B2C52-05E7-43C7-A2CD-39D74A3B9539}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B8CF047-95C7-4E42-B9B8-9376644BDD83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B8CF047-95C7-4E42-B9B8-9376644BDD83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B8CF047-95C7-4E42-B9B8-9376644BDD83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B8CF047-95C7-4E42-B9B8-9376644BDD83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C75532C4-765B-418E-B09B-46D36B2ABDB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C75532C4-765B-418E-B09B-46D36B2ABDB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C75532C4-765B-418E-B09B-46D36B2ABDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C75532C4-765B-418E-B09B-46D36B2ABDB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E55D6A57-2FAC-451A-B84A-61B5BC333D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E55D6A57-2FAC-451A-B84A-61B5BC333D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E55D6A57-2FAC-451A-B84A-61B5BC333D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E55D6A57-2FAC-451A-B84A-61B5BC333D30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B305DAC-DC8D-4CD3-B8D8-70D1C3F8A3CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B305DAC-DC8D-4CD3-B8D8-70D1C3F8A3CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B305DAC-DC8D-4CD3-B8D8-70D1C3F8A3CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B305DAC-DC8D-4CD3-B8D8-70D1C3F8A3CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E09FD2AE-5F10-4369-B624-8D9C4962E6F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E09FD2AE-5F10-4369-B624-8D9C4962E6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E09FD2AE-5F10-4369-B624-8D9C4962E6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E09FD2AE-5F10-4369-B624-8D9C4962E6F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E33B2C52-05E7-43C7-A2CD-39D74A3B9539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E33B2C52-05E7-43C7-A2CD-39D74A3B9539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E33B2C52-05E7-43C7-A2CD-39D74A3B9539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E33B2C52-05E7-43C7-A2CD-39D74A3B9539}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC256AA8-7B1B-4B82-8D29-B73BA4BFE24F}
+	EndGlobalSection
+EndGlobal

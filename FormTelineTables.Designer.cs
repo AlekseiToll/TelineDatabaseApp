@@ -177,21 +177,25 @@ namespace TelineApp
             // 
             // dgvcolTyomaaNimi
             // 
+            this.dgvcolTyomaaNimi.DataPropertyName = "Nimi";
             this.dgvcolTyomaaNimi.HeaderText = "Nimi";
             this.dgvcolTyomaaNimi.Name = "dgvcolTyomaaNimi";
             // 
             // dgvcolMaaraYhteensa
             // 
+            this.dgvcolMaaraYhteensa.DataPropertyName = "MaaraYhteensa";
             this.dgvcolMaaraYhteensa.HeaderText = "Maara Yhteensa";
             this.dgvcolMaaraYhteensa.Name = "dgvcolMaaraYhteensa";
             // 
             // dgvcolYhteyshenkilo
             // 
+            this.dgvcolYhteyshenkilo.DataPropertyName = "Yhteyshenkilo";
             this.dgvcolYhteyshenkilo.HeaderText = "Yhteyshenkilo";
             this.dgvcolYhteyshenkilo.Name = "dgvcolYhteyshenkilo";
             // 
             // dgvcolPuhelin
             // 
+            this.dgvcolPuhelin.DataPropertyName = "Puhelin";
             this.dgvcolPuhelin.HeaderText = "Puhelin";
             this.dgvcolPuhelin.Name = "dgvcolPuhelin";
             // 
@@ -233,13 +237,13 @@ namespace TelineApp
         private System.Windows.Forms.DataGridView dgvTeline;
         private System.Windows.Forms.Button btnAvaaIkkunassa;
         private System.Windows.Forms.Button btnUusiOsa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolTyomaaNimi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolMaaraYhteensa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolYhteyshenkilo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolPuhelin;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolKokoNimi;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolMaara;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolMinMaara;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolLaatikko;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolTyomaaNimi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolMaaraYhteensa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolYhteyshenkilo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolPuhelin;
     }
 }

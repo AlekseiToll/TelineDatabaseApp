@@ -19,7 +19,8 @@ namespace TelineApp
     {
         private DbConnector dbConnector_;
         private Varasto varasto_;
-        BindingSource bindingSource_ = new BindingSource();
+        BindingSource bindingSourceOsat_ = new BindingSource();
+        BindingSource bindingSourceTyomaat_ = new BindingSource();
 
         public FormTelineTables(DbConnector dbConnector)
         {
@@ -32,18 +33,24 @@ namespace TelineApp
         public void LoadTelineOsatData()
         {
             varasto_.LoadTelineOsatData();
-            bindingSource_.ResetBindings(false);
+            bindingSourceOsat_.ResetBindings(false);
         }
 
         public void LoadTyomaatData()
         {
+            varasto_.LoadTyomaatData();
+            bindingSourceTyomaat_.ResetBindings(false);
+        }
+
+        //public void LoadTyomaatData()
+        //{
             //string query = "SELECT * FROM public.tyomaat;";
 
             //DataSet ds = new DataSet();
             //dbConnector_.CreateAndFillDataAdapter(query, "tyomaat", ref ds);
             //dgvTyomaat.DataSource = ds;
             //dgvTyomaat.DataMember = "tyomaat";
-        }
+        //}
 
         public void EnableDatabaseButtons(bool enable)
         {
@@ -77,8 +84,10 @@ namespace TelineApp
         {
             dgvTeline.AutoGenerateColumns = false;
             dgvTyomaat.AutoGenerateColumns = false;
-            bindingSource_.DataSource = varasto_.GetOsatVarastossa();
-            dgvTeline.DataSource = bindingSource_;
+            bindingSourceOsat_.DataSource = varasto_.GetOsatVarastossa();
+            dgvTeline.DataSource = bindingSourceOsat_;
+            bindingSourceTyomaat_.DataSource = varasto_.GetTyomaat();
+            dgvTyomaat.DataSource = bindingSourceTyomaat_;
         }
     }
 }

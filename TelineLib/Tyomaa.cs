@@ -14,7 +14,7 @@ namespace TelineLib
 
         public string Osoite { get; set; }
 
-        public string YhteysHenkilo { get; set; }
+        public string Yhteyshenkilo { get; set; }
 
         public string Puhelin { get; set; }
 
@@ -25,7 +25,7 @@ namespace TelineLib
             Id = id;
             Nimi = nimi;
             Osoite = osoite;
-            YhteysHenkilo = yhteyshenkilo;
+            Yhteyshenkilo = yhteyshenkilo;
             Puhelin = puhelin;
             MaaraYhteensa = maara;
         }

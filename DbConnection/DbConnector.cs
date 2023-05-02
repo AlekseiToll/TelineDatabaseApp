@@ -236,7 +236,7 @@ namespace DbConnection
  @"SELECT t1.id, t1.nimi, t1.osoite, t1.yhteyshenkilo, t1.puhelin, SUM(t2.maara_lahetetty) AS maara
   FROM public.tyomaat AS t1 INNER JOIN public.osattyomaittain AS t2 
   ON t1.id = t2.id_tyomaa AND t2.palautettu = FALSE
-  GROUP BY t1.nimi, t1.osoite, t1.yhteyshenkilo, t1.puhelin;";
+  GROUP BY t1.id, t1.nimi, t1.osoite, t1.yhteyshenkilo, t1.puhelin;";
                 NpgsqlCommand command = new NpgsqlCommand(query, npgsqlConnection_);
                 NpgsqlDataReader dataReader = command.ExecuteReader();
 

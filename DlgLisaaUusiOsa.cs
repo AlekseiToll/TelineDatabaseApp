@@ -28,7 +28,7 @@ namespace TelineApp
             }
         }
 
-        public int MaaraNyt { get { return int.Parse(ctbMaaraNyt.Text); } }
+        public int MaaraVarastossa { get { return int.Parse(ctbMaaraVarastossa.Text); } }
 
         public int MinMaara { get { return int.Parse(ctbMinMaara.Text); } }
 
@@ -46,7 +46,7 @@ namespace TelineApp
         #region Input handlers
         private void colorTextBox_TextChanged(object sender, EventArgs e)
         {
-            btnSave.Enabled = ctbOsanNimi.Text.Length > 0 && ctbMaaraNyt.Text.Length > 0 && ctbMinMaara.Text.Length > 0;
+            btnSave.Enabled = ctbOsanNimi.Text.Length > 0 && ctbMaaraVarastossa.Text.Length > 0 && ctbMinMaara.Text.Length > 0;
             this.Refresh();
         }
 
@@ -84,13 +84,13 @@ namespace TelineApp
             }
         }
 
-        private void ctbMaaraNyt_TextChanged(object sender, EventArgs e)
+        private void ctbMaaraVarastossa_TextChanged(object sender, EventArgs e)
         {
             int i;
-            if (!int.TryParse(ctbMaaraNyt.Text, out i))
+            if (!int.TryParse(ctbMaaraVarastossa.Text, out i))
             {
-                if (ctbMaaraNyt.Text.Length > 0)
-                    ctbMaaraNyt.Text = ctbMaaraNyt.Text.Remove(ctbMaaraNyt.Text.Length - 1);
+                if (ctbMaaraVarastossa.Text.Length > 0)
+                    ctbMaaraVarastossa.Text = ctbMaaraVarastossa.Text.Remove(ctbMaaraVarastossa.Text.Length - 1);
             }
 
             colorTextBox_TextChanged(sender, e);

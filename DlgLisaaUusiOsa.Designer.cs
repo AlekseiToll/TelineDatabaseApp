@@ -39,12 +39,12 @@ namespace TelineApp
             this.labelNimi = new System.Windows.Forms.Label();
             this.labelPituus = new System.Windows.Forms.Label();
             this.tbPituus = new System.Windows.Forms.TextBox();
-            this.labelMaaraNyt = new System.Windows.Forms.Label();
+            this.labelMaaraVarastossa = new System.Windows.Forms.Label();
             this.labelMinMaara = new System.Windows.Forms.Label();
             this.labelLaatikko = new System.Windows.Forms.Label();
             this.tbHinta = new System.Windows.Forms.TextBox();
             this.labelHinta = new System.Windows.Forms.Label();
-            this.ctbMaaraNyt = new TelineApp.ColoredTextBox();
+            this.ctbMaaraVarastossa = new TelineApp.ColoredTextBox();
             this.ctbMinMaara = new TelineApp.ColoredTextBox();
             this.tbLaatikko = new System.Windows.Forms.TextBox();
             this.panelButtons.SuspendLayout();
@@ -135,15 +135,15 @@ namespace TelineApp
             this.tbPituus.TextChanged += new System.EventHandler(this.tbPituus_TextChanged);
             this.tbPituus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFloatValue_KeyPress);
             // 
-            // labelMaaraNyt
+            // labelMaaraVarastossa
             // 
-            this.labelMaaraNyt.AutoSize = true;
-            this.labelMaaraNyt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelMaaraNyt.Location = new System.Drawing.Point(14, 99);
-            this.labelMaaraNyt.Name = "labelMaaraNyt";
-            this.labelMaaraNyt.Size = new System.Drawing.Size(183, 17);
-            this.labelMaaraNyt.TabIndex = 25;
-            this.labelMaaraNyt.Text = "Nykyinen maara varastossa";
+            this.labelMaaraVarastossa.AutoSize = true;
+            this.labelMaaraVarastossa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMaaraVarastossa.Location = new System.Drawing.Point(14, 99);
+            this.labelMaaraVarastossa.Name = "labelMaaraVarastossa";
+            this.labelMaaraVarastossa.Size = new System.Drawing.Size(183, 17);
+            this.labelMaaraVarastossa.TabIndex = 25;
+            this.labelMaaraVarastossa.Text = "Nykyinen maara varastossa";
             // 
             // labelMinMaara
             // 
@@ -184,14 +184,14 @@ namespace TelineApp
             this.labelHinta.TabIndex = 31;
             this.labelHinta.Text = "Hinta";
             // 
-            // ctbMaaraNyt
+            // ctbMaaraVarastossa
             // 
-            this.ctbMaaraNyt.Location = new System.Drawing.Point(211, 98);
-            this.ctbMaaraNyt.Name = "ctbMaaraNyt";
-            this.ctbMaaraNyt.Size = new System.Drawing.Size(141, 20);
-            this.ctbMaaraNyt.TabIndex = 33;
-            this.ctbMaaraNyt.TextChanged += new System.EventHandler(this.ctbMaaraNyt_TextChanged);
-            this.ctbMaaraNyt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbIntValue_KeyPress);
+            this.ctbMaaraVarastossa.Location = new System.Drawing.Point(211, 98);
+            this.ctbMaaraVarastossa.Name = "ctbMaaraVarastossa";
+            this.ctbMaaraVarastossa.Size = new System.Drawing.Size(141, 20);
+            this.ctbMaaraVarastossa.TabIndex = 33;
+            this.ctbMaaraVarastossa.TextChanged += new System.EventHandler(this.ctbMaaraVarastossa_TextChanged);
+            this.ctbMaaraVarastossa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbIntValue_KeyPress);
             // 
             // ctbMinMaara
             // 
@@ -216,12 +216,12 @@ namespace TelineApp
             this.ClientSize = new System.Drawing.Size(369, 450);
             this.Controls.Add(this.tbLaatikko);
             this.Controls.Add(this.ctbMinMaara);
-            this.Controls.Add(this.ctbMaaraNyt);
+            this.Controls.Add(this.ctbMaaraVarastossa);
             this.Controls.Add(this.tbHinta);
             this.Controls.Add(this.labelHinta);
             this.Controls.Add(this.labelLaatikko);
             this.Controls.Add(this.labelMinMaara);
-            this.Controls.Add(this.labelMaaraNyt);
+            this.Controls.Add(this.labelMaaraVarastossa);
             this.Controls.Add(this.tbPituus);
             this.Controls.Add(this.labelPituus);
             this.Controls.Add(this.tbKuvaus);
@@ -253,12 +253,12 @@ namespace TelineApp
         private System.Windows.Forms.Label labelNimi;
         private System.Windows.Forms.Label labelPituus;
         private System.Windows.Forms.TextBox tbPituus;
-        private System.Windows.Forms.Label labelMaaraNyt;
+        private System.Windows.Forms.Label labelMaaraVarastossa;
         private System.Windows.Forms.Label labelMinMaara;
         private System.Windows.Forms.Label labelLaatikko;
         private System.Windows.Forms.TextBox tbHinta;
         private System.Windows.Forms.Label labelHinta;
-        private ColoredTextBox ctbMaaraNyt;
+        private ColoredTextBox ctbMaaraVarastossa;
         private ColoredTextBox ctbMinMaara;
         private System.Windows.Forms.TextBox tbLaatikko;
     }

@@ -15,4 +15,14 @@ namespace TelineLib
         LAATIKKO = 4,
         HINTA = 5
     }
+
+    public enum TyomaaIndex
+    {
+        ID = 0,
+        NIMI = 1,
+        OSOITE = 2,
+        YHTEYSHENKILO = 3,
+        PUHELIN = 4,
+        MAARA_YHTEENSA = 5
+    }
 }

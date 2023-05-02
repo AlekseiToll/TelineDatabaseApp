@@ -33,20 +33,17 @@ namespace TelineApp
             this.splitContainerTables = new System.Windows.Forms.SplitContainer();
             this.splitContainerOsat = new System.Windows.Forms.SplitContainer();
             this.dgvTeline = new System.Windows.Forms.DataGridView();
-            this.dsTelineOsat = new System.Data.DataSet();
-            this.dtTelineOsat = new System.Data.DataTable();
-            this.dataColumnNimi = new System.Data.DataColumn();
-            this.dataColumnMaara = new System.Data.DataColumn();
-            this.dataColumnMinMaara = new System.Data.DataColumn();
-            this.dataColumnLaatikko = new System.Data.DataColumn();
-            this.btnAvaaIkkunassa = new System.Windows.Forms.Button();
-            this.btnUusiOsa = new System.Windows.Forms.Button();
-            this.dgvTyomaat = new System.Windows.Forms.DataGridView();
-            this.dataColumnKokoNimi = new System.Data.DataColumn();
             this.dgvcolKokoNimi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvcolMaara = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvcolMinMaara = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvcolLaatikko = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAvaaIkkunassa = new System.Windows.Forms.Button();
+            this.btnUusiOsa = new System.Windows.Forms.Button();
+            this.dgvTyomaat = new System.Windows.Forms.DataGridView();
+            this.dgvcolTyomaaNimi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcolMaaraYhteensa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcolYhteyshenkilo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcolPuhelin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerTables)).BeginInit();
             this.splitContainerTables.Panel1.SuspendLayout();
             this.splitContainerTables.Panel2.SuspendLayout();
@@ -56,8 +53,6 @@ namespace TelineApp
             this.splitContainerOsat.Panel2.SuspendLayout();
             this.splitContainerOsat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeline)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTelineOsat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtTelineOsat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTyomaat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,95 +98,17 @@ namespace TelineApp
             // 
             this.dgvTeline.AllowUserToAddRows = false;
             this.dgvTeline.AllowUserToDeleteRows = false;
-            this.dgvTeline.AutoGenerateColumns = false;
             this.dgvTeline.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTeline.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvcolKokoNimi,
             this.dgvcolMaara,
             this.dgvcolMinMaara,
             this.dgvcolLaatikko});
-            this.dgvTeline.DataMember = "telineosat";
-            this.dgvTeline.DataSource = this.dsTelineOsat;
             this.dgvTeline.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTeline.Location = new System.Drawing.Point(0, 0);
             this.dgvTeline.Name = "dgvTeline";
             this.dgvTeline.Size = new System.Drawing.Size(673, 266);
             this.dgvTeline.TabIndex = 1;
-            // 
-            // dsTelineOsat
-            // 
-            this.dsTelineOsat.DataSetName = "DataSetTelineOsat";
-            this.dsTelineOsat.Tables.AddRange(new System.Data.DataTable[] {
-            this.dtTelineOsat});
-            // 
-            // dtTelineOsat
-            // 
-            this.dtTelineOsat.Columns.AddRange(new System.Data.DataColumn[] {
-            this.dataColumnNimi,
-            this.dataColumnMaara,
-            this.dataColumnMinMaara,
-            this.dataColumnLaatikko,
-            this.dataColumnKokoNimi});
-            this.dtTelineOsat.TableName = "telineosat";
-            // 
-            // dataColumnNimi
-            // 
-            this.dataColumnNimi.Caption = "Nimi";
-            this.dataColumnNimi.ColumnName = "Nimi";
-            // 
-            // dataColumnMaara
-            // 
-            this.dataColumnMaara.Caption = "Maara varastossa";
-            this.dataColumnMaara.ColumnName = "Maara";
-            this.dataColumnMaara.DataType = typeof(int);
-            // 
-            // dataColumnMinMaara
-            // 
-            this.dataColumnMinMaara.Caption = "Min Maara";
-            this.dataColumnMinMaara.ColumnName = "MinMaara";
-            this.dataColumnMinMaara.DataType = typeof(int);
-            // 
-            // dataColumnLaatikko
-            // 
-            this.dataColumnLaatikko.Caption = "Laatikko";
-            this.dataColumnLaatikko.ColumnName = "Laatikko";
-            // 
-            // btnAvaaIkkunassa
-            // 
-            this.btnAvaaIkkunassa.Enabled = false;
-            this.btnAvaaIkkunassa.Location = new System.Drawing.Point(14, 65);
-            this.btnAvaaIkkunassa.Name = "btnAvaaIkkunassa";
-            this.btnAvaaIkkunassa.Size = new System.Drawing.Size(97, 52);
-            this.btnAvaaIkkunassa.TabIndex = 1;
-            this.btnAvaaIkkunassa.Text = "Avaa uudessa ikkunassa muokkaukseen";
-            this.btnAvaaIkkunassa.UseVisualStyleBackColor = true;
-            // 
-            // btnUusiOsa
-            // 
-            this.btnUusiOsa.Enabled = false;
-            this.btnUusiOsa.Location = new System.Drawing.Point(14, 12);
-            this.btnUusiOsa.Name = "btnUusiOsa";
-            this.btnUusiOsa.Size = new System.Drawing.Size(97, 37);
-            this.btnUusiOsa.TabIndex = 0;
-            this.btnUusiOsa.Text = "Lisaa uusi osa";
-            this.btnUusiOsa.UseVisualStyleBackColor = true;
-            this.btnUusiOsa.Click += new System.EventHandler(this.btnUusiOsa_Click);
-            // 
-            // dgvTyomaat
-            // 
-            this.dgvTyomaat.AllowUserToAddRows = false;
-            this.dgvTyomaat.AllowUserToDeleteRows = false;
-            this.dgvTyomaat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTyomaat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTyomaat.Location = new System.Drawing.Point(0, 0);
-            this.dgvTyomaat.Name = "dgvTyomaat";
-            this.dgvTyomaat.Size = new System.Drawing.Size(800, 180);
-            this.dgvTyomaat.TabIndex = 0;
-            // 
-            // dataColumnKokoNimi
-            // 
-            this.dataColumnKokoNimi.Caption = "Nimi";
-            this.dataColumnKokoNimi.ColumnName = "KokoNimi";
             // 
             // dgvcolKokoNimi
             // 
@@ -221,6 +138,63 @@ namespace TelineApp
             this.dgvcolLaatikko.Name = "dgvcolLaatikko";
             this.dgvcolLaatikko.ReadOnly = true;
             // 
+            // btnAvaaIkkunassa
+            // 
+            this.btnAvaaIkkunassa.Enabled = false;
+            this.btnAvaaIkkunassa.Location = new System.Drawing.Point(14, 65);
+            this.btnAvaaIkkunassa.Name = "btnAvaaIkkunassa";
+            this.btnAvaaIkkunassa.Size = new System.Drawing.Size(97, 52);
+            this.btnAvaaIkkunassa.TabIndex = 1;
+            this.btnAvaaIkkunassa.Text = "Avaa uudessa ikkunassa muokkaukseen";
+            this.btnAvaaIkkunassa.UseVisualStyleBackColor = true;
+            // 
+            // btnUusiOsa
+            // 
+            this.btnUusiOsa.Enabled = false;
+            this.btnUusiOsa.Location = new System.Drawing.Point(14, 12);
+            this.btnUusiOsa.Name = "btnUusiOsa";
+            this.btnUusiOsa.Size = new System.Drawing.Size(97, 37);
+            this.btnUusiOsa.TabIndex = 0;
+            this.btnUusiOsa.Text = "Lisaa uusi osa";
+            this.btnUusiOsa.UseVisualStyleBackColor = true;
+            this.btnUusiOsa.Click += new System.EventHandler(this.btnUusiOsa_Click);
+            // 
+            // dgvTyomaat
+            // 
+            this.dgvTyomaat.AllowUserToAddRows = false;
+            this.dgvTyomaat.AllowUserToDeleteRows = false;
+            this.dgvTyomaat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTyomaat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvcolTyomaaNimi,
+            this.dgvcolMaaraYhteensa,
+            this.dgvcolYhteyshenkilo,
+            this.dgvcolPuhelin});
+            this.dgvTyomaat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTyomaat.Location = new System.Drawing.Point(0, 0);
+            this.dgvTyomaat.Name = "dgvTyomaat";
+            this.dgvTyomaat.Size = new System.Drawing.Size(800, 180);
+            this.dgvTyomaat.TabIndex = 0;
+            // 
+            // dgvcolTyomaaNimi
+            // 
+            this.dgvcolTyomaaNimi.HeaderText = "Nimi";
+            this.dgvcolTyomaaNimi.Name = "dgvcolTyomaaNimi";
+            // 
+            // dgvcolMaaraYhteensa
+            // 
+            this.dgvcolMaaraYhteensa.HeaderText = "Maara Yhteensa";
+            this.dgvcolMaaraYhteensa.Name = "dgvcolMaaraYhteensa";
+            // 
+            // dgvcolYhteyshenkilo
+            // 
+            this.dgvcolYhteyshenkilo.HeaderText = "Yhteyshenkilo";
+            this.dgvcolYhteyshenkilo.Name = "dgvcolYhteyshenkilo";
+            // 
+            // dgvcolPuhelin
+            // 
+            this.dgvcolPuhelin.HeaderText = "Puhelin";
+            this.dgvcolPuhelin.Name = "dgvcolPuhelin";
+            // 
             // FormTelineTables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,8 +220,6 @@ namespace TelineApp
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerOsat)).EndInit();
             this.splitContainerOsat.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeline)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTelineOsat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtTelineOsat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTyomaat)).EndInit();
             this.ResumeLayout(false);
 
@@ -256,18 +228,15 @@ namespace TelineApp
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainerTables;
-        private System.Data.DataSet dsTelineOsat;
         private System.Windows.Forms.DataGridView dgvTyomaat;
-        private System.Data.DataTable dtTelineOsat;
-        private System.Data.DataColumn dataColumnNimi;
-        private System.Data.DataColumn dataColumnMaara;
-        private System.Data.DataColumn dataColumnMinMaara;
-        private System.Data.DataColumn dataColumnLaatikko;
         private System.Windows.Forms.SplitContainer splitContainerOsat;
         private System.Windows.Forms.DataGridView dgvTeline;
         private System.Windows.Forms.Button btnAvaaIkkunassa;
         private System.Windows.Forms.Button btnUusiOsa;
-        private System.Data.DataColumn dataColumnKokoNimi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolTyomaaNimi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolMaaraYhteensa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolYhteyshenkilo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolPuhelin;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolKokoNimi;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolMaara;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcolMinMaara;

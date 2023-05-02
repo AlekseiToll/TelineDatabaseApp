@@ -31,7 +31,7 @@ namespace TelineApp
 
         public void LoadTelineOsatData()
         {
-            varasto_.LoadTelineOsatData(ref dsTelineOsat);
+            varasto_.LoadTelineOsatData();
             bindingSource_.ResetBindings(false);
         }
 
@@ -59,7 +59,7 @@ namespace TelineApp
                 if(!dbConnector_.AddUusiOsa(
                     dlgUusiOsa.Nimi,
                     dlgUusiOsa.Pituus,
-                    dlgUusiOsa.MaaraNyt,
+                    dlgUusiOsa.MaaraVarastossa,
                     dlgUusiOsa.MinMaara,
                     dlgUusiOsa.Laatikko,
                     dlgUusiOsa.Hinta))
@@ -75,6 +75,8 @@ namespace TelineApp
 
         private void FormTelineTables_Load(object sender, EventArgs e)
         {
+            dgvTeline.AutoGenerateColumns = false;
+            dgvTyomaat.AutoGenerateColumns = false;
             bindingSource_.DataSource = varasto_.GetOsatVarastossa();
             dgvTeline.DataSource = bindingSource_;
         }

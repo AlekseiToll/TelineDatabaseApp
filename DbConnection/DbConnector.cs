@@ -228,12 +228,54 @@ namespace DbConnection
             }
         }
 
-        public bool AddUusiOsa(string nimi, float pituus, int maaraNyt, int minMaara, string laatikko, float hinta)
+        public bool LoadTyomaatData(ref List<Tyomaa> listTyomaat)
+        {
+            try
+            {
+                string query =
+ @"SELECT t1.id, t1.nimi, t1.osoite, t1.yhteyshenkilo, t1.puhelin, SUM(t2.maara_lahetetty) AS maara
+  FROM public.tyomaat AS t1 INNER JOIN public.osattyomaittain AS t2 
+  ON t1.id = t2.id_tyomaa AND t2.palautettu = FALSE
+  GROUP BY t1.nimi, t1.osoite, t1.yhteyshenkilo, t1.puhelin;";
+                NpgsqlCommand command = new NpgsqlCommand(query, npgsqlConnection_);
+                NpgsqlDataReader dataReader = command.ExecuteReader();
+
+                listTyomaat.Clear();
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        string strId = dataReader[(int)TyomaaIndex.ID].ToString();
+                        string nimi = dataReader[(int)TyomaaIndex.NIMI].ToString();
+                        string osoite = dataReader[(int)TyomaaIndex.OSOITE].ToString();
+                        string yhteyshenkilo = dataReader[(int)TyomaaIndex.YHTEYSHENKILO].ToString();
+                        string puhelin = dataReader[(int)TyomaaIndex.PUHELIN].ToString();
+                        string strMaaraYhteensa = dataReader[(int)TyomaaIndex.MAARA_YHTEENSA].ToString();
+
+                        if (!int.TryParse(strMaaraYhteensa, out int id))
+                            id = -1;
+                        if (!int.TryParse(strMaaraYhteensa, out int maara))
+                            maara = -1;
+
+                        listTyomaat.Add(new Tyomaa(id, nimi, osoite, yhteyshenkilo, puhelin, maara));
+                    }
+                }
+                dataReader.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                TelineAppService.DumpException(ex, "Error in DbConnector::LoadTyomaatData():");
+                return false;
+            }
+        }
+
+        public bool AddUusiOsa(string nimi, float pituus, int maaraVarastossa, int minMaara, string laatikko, float hinta)
         {
             string query = string.Format("INSERT INTO public.telineosat(nimi, pituus, maara_nyt, minimimaara, laatikko, hinta) VALUES('{0}', {1}, {2}, {3}, '{4}', {5});",
                 nimi,
                 pituus > 0 ? pituus.ToString() : "NULL",
-                maaraNyt,
+                maaraVarastossa,
                 minMaara,
                 laatikko.ToString().Length > 0 ? laatikko : "NULL",
                 hinta > 0 ? hinta.ToString() : "NULL"

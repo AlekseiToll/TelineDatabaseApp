@@ -20,7 +20,7 @@ namespace TelineVarasto
             dbConnector_ = dbConnector;
         }
 
-        public void LoadTelineOsatData(ref DataSet dsTelineOsat)
+        public void LoadTelineOsatData()
         {
             dbConnector_.LoadTelineOsatData(ref listOsatVarastossa_);
         }
